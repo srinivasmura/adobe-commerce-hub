@@ -1,0 +1,52 @@
+[
+  {
+    "id": "PRD-1006",
+    "name": "Muramalla",
+    "category": "Home & Living",
+    "price": 25,
+    "stock": 50,
+    "status": "Active",
+    "icon": "◇",
+    "color": "blue"
+  },
+  {
+    "id": "PRD-1002",
+    "name": "Minimal Desk Lamp",
+    "category": "Home & Living",
+    "price": 64.5,
+    "stock": 12,
+    "status": "Active",
+    "icon": "◈",
+    "color": "amber"
+  },
+  {
+    "id": "PRD-1003",
+    "name": "Everyday Backpack",
+    "category": "Accessories",
+    "price": 89,
+    "stock": 0,
+    "status": "Out of stock",
+    "icon": "▤",
+    "color": "blue"
+  },
+  {
+    "id": "PRD-1004",
+    "name": "Smart Watch Pro",
+    "category": "Electronics",
+    "price": 249,
+    "stock": 31,
+    "status": "Active",
+    "icon": "◷",
+    "color": "green"
+  },
+  {
+    "id": "PRD-1005",
+    "name": "Ceramic Coffee Set",
+    "category": "Home & Living",
+    "price": 42,
+    "stock": 5,
+    "status": "Low stock",
+    "icon": "◉",
+    "color": "rose"
+  }
+]
