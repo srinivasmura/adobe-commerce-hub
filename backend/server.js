@@ -10,7 +10,11 @@ const PORT = process.env.PORT || 5000;
 const DATA_FILE = path.join(__dirname, "data", "products.json");
 
 app.use(cors({
-  origin: "http://localhost:5173",
+  origin: [
+    "http://localhost:5173",
+    "http://localhost:4173",
+    "https://adobe-commerce-hub.vercel.app"
+  ]
 }));
 
 app.use(express.json());
