@@ -19,6 +19,10 @@ function Dashboard() {
   const [category, setCategory] = useState("All categories");
   const [activePage, setActivePage] = useState("Dashboard");
   const [isSidebarOpen, setIsSidebarOpen] = useState(false)
+  const handleNavigation = (page) => {
+    setActivePage(page);
+    setIsSidebarOpen(false);
+  };
   const [isProductModalOpen, setIsProductModalOpen] = useState(false);
   const [editingProduct, setEditingProduct] = useState(null);
   const [formData, setFormData] = useState({
@@ -225,6 +229,14 @@ function Dashboard() {
               <div className="brand-name">Commerce Hub</div>
               <div className="brand-caption">MANAGEMENT PLATFORM</div>
             </div>
+            <button
+              type="button"
+              className="sidebar-close-button"
+              onClick={() => setIsSidebarOpen(false)}
+              aria-label="Close navigation menu"
+            >
+              ×
+            </button>
           </div>
 
           <div className="workspace-label">WORKSPACE</div>
@@ -240,7 +252,7 @@ function Dashboard() {
           <div className="nav-label">OVERVIEW</div>
           <button
             className={`nav-item ${activePage === "Dashboard" ? "selected" : ""}`}
-            onClick={() => setActivePage("Dashboard")}
+            onClick={() => handleNavigation("Dashboard")}
           >
             <span className="nav-icon">▦</span> Dashboard
           </button>
@@ -256,7 +268,7 @@ function Dashboard() {
             <button
               key={label}
               className={`nav-item ${activePage === label ? "selected" : ""}`}
-              onClick={() => setActivePage(label)}
+              onClick={() => handleNavigation(label)}
             >
               <span className="nav-icon">{icon}</span>
               {label}
@@ -267,7 +279,7 @@ function Dashboard() {
           <div className="nav-label">SYSTEM</div>
           <button
             className={`nav-item ${activePage === "Settings" ? "selected" : ""}`}
-            onClick={() => setActivePage("Settings")}
+            onClick={() => handleNavigation("Settings")}
           >
             <span className="nav-icon">⚙</span> Settings
           </button>
@@ -292,6 +304,15 @@ function Dashboard() {
             </div>
           </div>
         </aside>
+
+        {isSidebarOpen && (
+          <button
+            type="button"
+            className="mobile-sidebar-backdrop"
+            onClick={() => setIsSidebarOpen(false)}
+            aria-label="Close navigation menu"
+          />
+        )}
 
         <button
           className="mobile-menu-toggle"
